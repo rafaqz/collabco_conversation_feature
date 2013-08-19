@@ -39,32 +39,5 @@ function collabco_conversation_feature_default_fe_block_settings() {
     'visibility' => 1,
   );
 
-  $export['views-nodequeue_2-block'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'nodequeue_2-block',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'openhub' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'openhub',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   return $export;
 }

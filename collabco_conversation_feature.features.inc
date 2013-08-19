@@ -22,6 +22,38 @@ function collabco_conversation_feature_views_api() {
 }
 
 /**
+ * Implements hook_fe_nodequeue_export_fields().
+ */
+function collabco_conversation_feature_fe_nodequeue_export_fields() {
+  $nodequeues = array();
+
+  // Exported nodequeues: join_the_conversation_queue
+  $nodequeues['join_the_conversation_queue'] = array(
+    'name' => 'join_the_conversation_queue',
+    'title' => 'join the conversation queue',
+    'subqueue_title' => '',
+    'size' => 0,
+    'link' => 'add to Join the Conversation',
+    'link_remove' => 'remove from Join the Conversation',
+    'owner' => 'nodequeue',
+    'show_in_ui' => 1,
+    'show_in_tab' => 1,
+    'show_in_links' => 1,
+    'reference' => 0,
+    'reverse' => 0,
+    'i18n' => 0,
+    'subqueues' => 1,
+    'types' => array(
+      0 => 'discussion',
+    ),
+    'roles' => array(),
+    'count' => 0,
+  );
+
+  return $nodequeues;
+}
+
+/**
  * Implements hook_node_info().
  */
 function collabco_conversation_feature_node_info() {

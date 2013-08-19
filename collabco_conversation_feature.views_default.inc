@@ -267,7 +267,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['image_style'] = 'user_thumb';
-  /* Field: Profile: Business Position */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_business_position_1']['id'] = 'field_business_position_1';
   $handler->display->display_options['fields']['field_business_position_1']['table'] = 'field_data_field_business_position';
   $handler->display->display_options['fields']['field_business_position_1']['field'] = 'field_business_position';
@@ -275,7 +275,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['field_business_position_1']['label'] = '';
   $handler->display->display_options['fields']['field_business_position_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_business_position_1']['element_label_colon'] = FALSE;
-  /* Field: Profile: Organisation */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_organisation_ref_1']['id'] = 'field_organisation_ref_1';
   $handler->display->display_options['fields']['field_organisation_ref_1']['table'] = 'field_data_field_organisation_ref';
   $handler->display->display_options['fields']['field_organisation_ref_1']['field'] = 'field_organisation_ref';
@@ -283,9 +283,6 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['field_organisation_ref_1']['label'] = '';
   $handler->display->display_options['fields']['field_organisation_ref_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_organisation_ref_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_organisation_ref_1']['settings'] = array(
-    'link' => 0,
-  );
   /* Field: Comment: Author */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'comment';
@@ -305,7 +302,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['picture_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['picture_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture_1']['image_style'] = 'user_thumb_small';
-  /* Field: Profile: Business Position */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_business_position']['id'] = 'field_business_position';
   $handler->display->display_options['fields']['field_business_position']['table'] = 'field_data_field_business_position';
   $handler->display->display_options['fields']['field_business_position']['field'] = 'field_business_position';
@@ -313,7 +310,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['field_business_position']['label'] = '';
   $handler->display->display_options['fields']['field_business_position']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_business_position']['element_label_colon'] = FALSE;
-  /* Field: Profile: Organisation */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_organisation_ref']['id'] = 'field_organisation_ref';
   $handler->display->display_options['fields']['field_organisation_ref']['table'] = 'field_data_field_organisation_ref';
   $handler->display->display_options['fields']['field_organisation_ref']['field'] = 'field_organisation_ref';
@@ -321,9 +318,6 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['field_organisation_ref']['label'] = '';
   $handler->display->display_options['fields']['field_organisation_ref']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_organisation_ref']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_organisation_ref']['settings'] = array(
-    'link' => 0,
-  );
   /* Field: Comment: Comment */
   $handler->display->display_options['fields']['comment_body']['id'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';

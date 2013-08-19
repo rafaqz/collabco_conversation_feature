@@ -14,7 +14,6 @@ function collabco_conversation_feature_user_default_permissions() {
   $permissions['create discussion content'] = array(
     'name' => 'create discussion content',
     'roles' => array(
-      'Admin' => 'Admin',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
@@ -23,9 +22,7 @@ function collabco_conversation_feature_user_default_permissions() {
   // Exported permission: delete any discussion content.
   $permissions['delete any discussion content'] = array(
     'name' => 'delete any discussion content',
-    'roles' => array(
-      'Admin' => 'Admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -33,7 +30,6 @@ function collabco_conversation_feature_user_default_permissions() {
   $permissions['delete own discussion content'] = array(
     'name' => 'delete own discussion content',
     'roles' => array(
-      'Admin' => 'Admin',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
@@ -42,10 +38,7 @@ function collabco_conversation_feature_user_default_permissions() {
   // Exported permission: edit any discussion content.
   $permissions['edit any discussion content'] = array(
     'name' => 'edit any discussion content',
-    'roles' => array(
-      'Admin' => 'Admin',
-      'Content Manager' => 'Content Manager',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -53,7 +46,6 @@ function collabco_conversation_feature_user_default_permissions() {
   $permissions['edit own discussion content'] = array(
     'name' => 'edit own discussion content',
     'roles' => array(
-      'Admin' => 'Admin',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
