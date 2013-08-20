@@ -12,11 +12,11 @@ function collabco_conversation_feature_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['views-join_the_coversation-block'] = array(
+  $export['views-join_the_conversation-block'] = array(
     'cache' => -1,
     'css_class' => 'iin-join-conversation-block',
     'custom' => 0,
-    'delta' => 'join_the_coversation-block',
+    'delta' => 'join_the_conversation-block',
     'module' => 'views',
     'node_types' => array(),
     'pages' => '<front>',

@@ -85,11 +85,11 @@ function collabco_conversation_feature_views_default_views() {
   $export['conversation_titles'] = $view;
 
   $view = new view();
-  $view->name = 'join_the_coversation';
+  $view->name = 'join_the_conversation';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Join the coversation';
+  $view->human_name = 'Join the conversation';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -447,7 +447,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
-  $export['join_the_coversation'] = $view;
+  $export['join_the_conversation'] = $view;
 
   return $export;
 }
