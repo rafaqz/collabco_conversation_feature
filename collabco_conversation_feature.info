@@ -49,3 +49,11 @@ features_exclude[field_base][body] = body
 features_exclude[field_base][og_group_ref] = og_group_ref
 features_exclude[field_instance][node-discussion-og_group_ref] = node-discussion-og_group_ref
 project path = sites/all/modules/features
+
+
+; Information added by drush on 2013-08-19
+version = "7.x-1.0-alpha1"
+core = "7.x"
+project = "collabco_conversation_feature"
+datestamp = "1376967642"
+
