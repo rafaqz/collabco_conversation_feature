@@ -10,9 +10,9 @@
 function collabco_conversation_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-discussion-body'
-  $field_instances['node-discussion-body'] = array(
-    'bundle' => 'discussion',
+  // Exported field_instance: 'node-conversation-body'
+  $field_instances['node-conversation-body'] = array(
+    'bundle' => 'conversation',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',

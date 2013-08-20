@@ -10,41 +10,41 @@
 function collabco_conversation_feature_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: create discussion content.
-  $permissions['create discussion content'] = array(
-    'name' => 'create discussion content',
+  // Exported permission: create conversation content.
+  $permissions['create conversation content'] = array(
+    'name' => 'create conversation content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: delete any discussion content.
-  $permissions['delete any discussion content'] = array(
-    'name' => 'delete any discussion content',
+  // Exported permission: delete any conversation content.
+  $permissions['delete any conversation content'] = array(
+    'name' => 'delete any conversation content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: delete own discussion content.
-  $permissions['delete own discussion content'] = array(
-    'name' => 'delete own discussion content',
+  // Exported permission: delete own conversation content.
+  $permissions['delete own conversation content'] = array(
+    'name' => 'delete own conversation content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: edit any discussion content.
-  $permissions['edit any discussion content'] = array(
-    'name' => 'edit any discussion content',
+  // Exported permission: edit any conversation content.
+  $permissions['edit any conversation content'] = array(
+    'name' => 'edit any conversation content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: edit own discussion content.
-  $permissions['edit own discussion content'] = array(
-    'name' => 'edit own discussion content',
+  // Exported permission: edit own conversation content.
+  $permissions['edit own conversation content'] = array(
+    'name' => 'edit own conversation content',
     'roles' => array(
       'authenticated user' => 'authenticated user',
     ),

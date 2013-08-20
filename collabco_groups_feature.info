@@ -25,7 +25,7 @@ features[field_base][] = og_group_ref
 features[field_base][] = og_membership_request
 features[field_base][] = og_user_node
 features[field_base][] = og_views
-features[field_instance][] = node-discussion-og_group_ref
+features[field_instance][] = node-conversation-og_group_ref
 features[field_instance][] = node-group-body
 features[field_instance][] = node-group-group_group
 features[field_instance][] = node-knowledge_object-og_group_ref
@@ -35,11 +35,11 @@ features[node][] = group
 features[og_features_permission][] = node:group:add user
 features[og_features_permission][] = node:group:administer group
 features[og_features_permission][] = node:group:approve and deny subscription
-features[og_features_permission][] = node:group:create discussion content
+features[og_features_permission][] = node:group:create conversation content
 features[og_features_permission][] = node:group:create knowledge_object content
-features[og_features_permission][] = node:group:delete any discussion content
+features[og_features_permission][] = node:group:delete any conversation content
 features[og_features_permission][] = node:group:delete any knowledge_object content
-features[og_features_permission][] = node:group:delete own discussion content
+features[og_features_permission][] = node:group:delete own conversation content
 features[og_features_permission][] = node:group:delete own knowledge_object content
 features[og_features_permission][] = node:group:manage members
 features[og_features_permission][] = node:group:manage permissions
@@ -47,7 +47,7 @@ features[og_features_permission][] = node:group:manage roles
 features[og_features_permission][] = node:group:subscribe
 features[og_features_permission][] = node:group:subscribe without approval
 features[og_features_permission][] = node:group:unsubscribe
-features[og_features_permission][] = node:group:update any discussion content
+features[og_features_permission][] = node:group:update any conversation content
 features[og_features_permission][] = node:group:update any knowledge_object content
 features[og_features_permission][] = node:group:update body field
 features[og_features_permission][] = node:group:update field_author_or_source field
@@ -63,7 +63,7 @@ features[og_features_permission][] = node:group:update group
 features[og_features_permission][] = node:group:update group_group field
 features[og_features_permission][] = node:group:update og_group_ref field
 features[og_features_permission][] = node:group:update og_user_node field
-features[og_features_permission][] = node:group:update own discussion content
+features[og_features_permission][] = node:group:update own conversation content
 features[og_features_permission][] = node:group:update own knowledge_object content
 features[og_features_permission][] = node:group:view body field
 features[og_features_permission][] = node:group:view field_author_or_source field
@@ -112,4 +112,12 @@ version = "7.x-1.0-alpha1"
 core = "7.x"
 project = "collabco_conversation_feature"
 datestamp = "1376967642"
+
+
+
+; Information added by drush on 2013-08-19
+version = "7.x-1.0-alpha1"
+core = "7.x"
+project = "collabco_conversation_feature"
+datestamp = "1376976855"
 

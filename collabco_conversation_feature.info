@@ -20,26 +20,26 @@ features[ctools][] = views:views_default:3.0
 features[fe_block_settings][] = views-join_the_coversation-block
 features[fe_nodequeue][] = join_the_conversation_queue
 features[features_api][] = api:2
-features[field_instance][] = node-discussion-body
-features[node][] = discussion
-features[user_permission][] = create discussion content
-features[user_permission][] = delete any discussion content
-features[user_permission][] = delete own discussion content
-features[user_permission][] = edit any discussion content
-features[user_permission][] = edit own discussion content
-features[variable][] = comment_anonymous_discussion
-features[variable][] = comment_default_mode_discussion
-features[variable][] = comment_default_per_page_discussion
-features[variable][] = comment_discussion
-features[variable][] = comment_form_location_discussion
-features[variable][] = comment_preview_discussion
-features[variable][] = comment_subject_field_discussion
-features[variable][] = field_bundle_settings_node__discussion
-features[variable][] = menu_options_discussion
-features[variable][] = menu_parent_discussion
-features[variable][] = node_options_discussion
-features[variable][] = node_preview_discussion
-features[variable][] = node_submitted_discussion
+features[field_instance][] = node-conversation-body
+features[node][] = conversation
+features[user_permission][] = create conversation content
+features[user_permission][] = delete any conversation content
+features[user_permission][] = delete own conversation content
+features[user_permission][] = edit any conversation content
+features[user_permission][] = edit own conversation content
+features[variable][] = comment_anonymous_conversation
+features[variable][] = comment_default_mode_conversation
+features[variable][] = comment_default_per_page_conversation
+features[variable][] = comment_conversation
+features[variable][] = comment_form_location_conversation
+features[variable][] = comment_preview_conversation
+features[variable][] = comment_subject_field_conversation
+features[variable][] = field_bundle_settings_node__conversation
+features[variable][] = menu_options_conversation
+features[variable][] = menu_parent_conversation
+features[variable][] = node_options_conversation
+features[variable][] = node_preview_conversation
+features[variable][] = node_submitted_conversation
 features[views_view][] = conversation_titles
 features[views_view][] = join_the_coversation
 features_exclude[dependencies][collabco_entities_feature] = collabco_entities_feature
@@ -47,7 +47,7 @@ features_exclude[dependencies][og_ui] = og_ui
 features_exclude[dependencies][collabco_view_feature] = collabco_view_feature
 features_exclude[field_base][body] = body
 features_exclude[field_base][og_group_ref] = og_group_ref
-features_exclude[field_instance][node-discussion-og_group_ref] = node-discussion-og_group_ref
+features_exclude[field_instance][node-conversation-og_group_ref] = node-conversation-og_group_ref
 project path = sites/all/modules/features
 
 
@@ -56,4 +56,12 @@ version = "7.x-1.0-alpha1"
 core = "7.x"
 project = "collabco_conversation_feature"
 datestamp = "1376967642"
+
+
+
+; Information added by drush on 2013-08-19
+version = "7.x-1.0-alpha1"
+core = "7.x"
+project = "collabco_conversation_feature"
+datestamp = "1376976855"
 

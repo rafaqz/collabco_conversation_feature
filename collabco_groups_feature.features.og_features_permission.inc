@@ -31,8 +31,8 @@ function collabco_groups_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:group:create discussion content'
-  $permissions['node:group:create discussion content'] = array(
+  // Exported og permission: 'node:group:create conversation content'
+  $permissions['node:group:create conversation content'] = array(
     'roles' => array(),
   );
 
@@ -41,8 +41,8 @@ function collabco_groups_feature_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:group:delete any discussion content'
-  $permissions['node:group:delete any discussion content'] = array(
+  // Exported og permission: 'node:group:delete any conversation content'
+  $permissions['node:group:delete any conversation content'] = array(
     'roles' => array(),
   );
 
@@ -51,8 +51,8 @@ function collabco_groups_feature_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:group:delete own discussion content'
-  $permissions['node:group:delete own discussion content'] = array(
+  // Exported og permission: 'node:group:delete own conversation content'
+  $permissions['node:group:delete own conversation content'] = array(
     'roles' => array(),
   );
 
@@ -101,8 +101,8 @@ function collabco_groups_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:group:update any discussion content'
-  $permissions['node:group:update any discussion content'] = array(
+  // Exported og permission: 'node:group:update any conversation content'
+  $permissions['node:group:update any conversation content'] = array(
     'roles' => array(),
   );
 
@@ -185,8 +185,8 @@ function collabco_groups_feature_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:group:update own discussion content'
-  $permissions['node:group:update own discussion content'] = array(
+  // Exported og permission: 'node:group:update own conversation content'
+  $permissions['node:group:update own conversation content'] = array(
     'roles' => array(),
   );
 

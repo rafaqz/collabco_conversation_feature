@@ -80,7 +80,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'discussion' => 'discussion',
+    'conversation' => 'conversation',
   );
   $export['conversation_titles'] = $view;
 
@@ -344,7 +344,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="row-fluid discussionpreview">
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="row-fluid conversationpreview">
   <h3>[title]</h3>
   <div class="hostedby"><p>A conversation hosted by:</p></div>
   <div class="span2">[picture]</div>
@@ -354,7 +354,7 @@ function collabco_conversation_feature_views_default_views() {
   </div>
   <div class="span12 divider"></div>
   <div class="span11">[body]<br>
-  <div class="row-fluid discussioncomment span12">
+  <div class="row-fluid conversationcomment span12">
     <div class="span11">
       <p class"p2"><strong>Recent comment: <em>[last_comment_timestamp]</em></strong></p>
     </div>
@@ -396,7 +396,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'discussion' => 'discussion',
+    'conversation' => 'conversation',
   );
 
   /* Display: Page */
@@ -434,7 +434,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'No discussions shared yet for this Innovation Capability topic.';
+  $handler->display->display_options['empty']['area']['content'] = 'No conversations shared yet for this Innovation Capability topic.';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Taxonomy term: Term ID */

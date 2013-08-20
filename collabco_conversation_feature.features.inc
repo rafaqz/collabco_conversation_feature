@@ -44,7 +44,7 @@ function collabco_conversation_feature_fe_nodequeue_export_fields() {
     'i18n' => 0,
     'subqueues' => 1,
     'types' => array(
-      0 => 'discussion',
+      0 => 'conversation',
     ),
     'roles' => array(),
     'count' => 0,
@@ -58,7 +58,7 @@ function collabco_conversation_feature_fe_nodequeue_export_fields() {
  */
 function collabco_conversation_feature_node_info() {
   $items = array(
-    'discussion' => array(
+    'conversation' => array(
       'name' => t('Conversation'),
       'base' => 'node_content',
       'description' => '',

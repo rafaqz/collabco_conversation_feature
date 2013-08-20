@@ -10,9 +10,9 @@
 function collabco_groups_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-discussion-og_group_ref'
-  $field_instances['node-discussion-og_group_ref'] = array(
-    'bundle' => 'discussion',
+  // Exported field_instance: 'node-conversation-og_group_ref'
+  $field_instances['node-conversation-og_group_ref'] = array(
+    'bundle' => 'conversation',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
