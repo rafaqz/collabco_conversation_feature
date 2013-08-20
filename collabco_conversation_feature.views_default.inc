@@ -183,7 +183,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['relationships']['profile_1']['relationship'] = 'last_comment_uid';
   $handler->display->display_options['relationships']['profile_1']['label'] = 'Comment Profile';
   $handler->display->display_options['relationships']['profile_1']['bundle_types'] = array(
-    'iin_kickstarter' => 'iin_kickstarter',
+    'profile' => 'profile',
   );
   /* Relationship: User: Profile */
   $handler->display->display_options['relationships']['profile']['id'] = 'profile';
@@ -192,7 +192,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['relationships']['profile']['relationship'] = 'uid';
   $handler->display->display_options['relationships']['profile']['label'] = 'Host';
   $handler->display->display_options['relationships']['profile']['bundle_types'] = array(
-    'iin_kickstarter' => 'iin_kickstarter',
+    'profile' => 'profile',
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
