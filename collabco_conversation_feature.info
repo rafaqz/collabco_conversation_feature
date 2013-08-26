@@ -3,9 +3,10 @@ description = Collabco conversation threads
 core = 7.x
 package = Collabco
 php = 5.2.4
-version = 7.x-1.0-alpha1
+version = unknown
 project = collabco_conversation_feature
 dependencies[] = collabco_groups_feature
+dependencies[] = collabco_settings_feature
 dependencies[] = ctools
 dependencies[] = fe_block
 dependencies[] = fe_nodequeue
@@ -14,12 +15,13 @@ dependencies[] = node
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = views
-datestamp = 1376895705
+datestamp = 1377474165
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[fe_block_settings][] = views-join_the_conversation-block
 features[fe_nodequeue][] = join_the_conversation_queue
 features[features_api][] = api:2
+features[field_instance][] = comment-comment_node_conversation-comment_body
 features[field_instance][] = node-conversation-body
 features[node][] = conversation
 features[user_permission][] = create conversation content
@@ -28,9 +30,9 @@ features[user_permission][] = delete own conversation content
 features[user_permission][] = edit any conversation content
 features[user_permission][] = edit own conversation content
 features[variable][] = comment_anonymous_conversation
+features[variable][] = comment_conversation
 features[variable][] = comment_default_mode_conversation
 features[variable][] = comment_default_per_page_conversation
-features[variable][] = comment_conversation
 features[variable][] = comment_form_location_conversation
 features[variable][] = comment_preview_conversation
 features[variable][] = comment_subject_field_conversation
@@ -48,44 +50,3 @@ features_exclude[dependencies][collabco_view_feature] = collabco_view_feature
 features_exclude[field_base][body] = body
 features_exclude[field_base][og_group_ref] = og_group_ref
 features_exclude[field_instance][node-conversation-og_group_ref] = node-conversation-og_group_ref
-project path = sites/all/modules/features
-
-
-; Information added by drush on 2013-08-19
-version = "7.x-1.0-alpha1"
-core = "7.x"
-project = "collabco_conversation_feature"
-datestamp = "1376967642"
-
-
-
-; Information added by drush on 2013-08-19
-version = "7.x-1.0-alpha1"
-core = "7.x"
-project = "collabco_conversation_feature"
-datestamp = "1376976855"
-
-
-
-; Information added by drush on 2013-08-20
-version = "7.x-1.0-alpha1"
-core = "7.x"
-project = "collabco_conversation_feature"
-datestamp = "1377048598"
-
-
-
-; Information added by drush on 2013-08-21
-version = "7.x-1.0-alpha1"
-core = "7.x"
-project = "collabco_conversation_feature"
-datestamp = "1377138065"
-
-
-
-; Information added by drush on 2013-08-21
-version = "7.x-1.0-alpha1"
-core = "7.x"
-project = "collabco_conversation_feature"
-datestamp = "1377141600"
-
