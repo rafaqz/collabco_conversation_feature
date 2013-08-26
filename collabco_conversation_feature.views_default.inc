@@ -276,13 +276,13 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['field_business_position_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_business_position_1']['element_label_colon'] = FALSE;
   /* Field: Profile: Organisation */
-  $handler->display->display_options['fields']['field_organisation_ref_1']['id'] = 'field_organisation_ref_1';
-  $handler->display->display_options['fields']['field_organisation_ref_1']['table'] = 'field_data_field_organisation_ref';
-  $handler->display->display_options['fields']['field_organisation_ref_1']['field'] = 'field_organisation_ref';
-  $handler->display->display_options['fields']['field_organisation_ref_1']['relationship'] = 'profile';
-  $handler->display->display_options['fields']['field_organisation_ref_1']['label'] = '';
-  $handler->display->display_options['fields']['field_organisation_ref_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_organisation_ref_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_organisation_1']['id'] = 'field_organisation_1';
+  $handler->display->display_options['fields']['field_organisation_1']['table'] = 'field_data_field_organisation';
+  $handler->display->display_options['fields']['field_organisation_1']['field'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation_1']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['field_organisation_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_organisation_1']['alter']['text'] = '@ [field_organisation_1]';
+  $handler->display->display_options['fields']['field_organisation_1']['hide_empty'] = TRUE;
   /* Field: Comment: Author */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'comment';
@@ -311,13 +311,13 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['field_business_position']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_business_position']['element_label_colon'] = FALSE;
   /* Field: Profile: Organisation */
-  $handler->display->display_options['fields']['field_organisation_ref']['id'] = 'field_organisation_ref';
-  $handler->display->display_options['fields']['field_organisation_ref']['table'] = 'field_data_field_organisation_ref';
-  $handler->display->display_options['fields']['field_organisation_ref']['field'] = 'field_organisation_ref';
-  $handler->display->display_options['fields']['field_organisation_ref']['relationship'] = 'profile_1';
-  $handler->display->display_options['fields']['field_organisation_ref']['label'] = '';
-  $handler->display->display_options['fields']['field_organisation_ref']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_organisation_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['field'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['relationship'] = 'profile_1';
+  $handler->display->display_options['fields']['field_organisation']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_organisation']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_organisation']['alter']['text'] = '@ [field_organisation]';
   /* Field: Comment: Comment */
   $handler->display->display_options['fields']['comment_body']['id'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
@@ -350,7 +350,7 @@ function collabco_conversation_feature_views_default_views() {
   <div class="span2">[picture]</div>
   <div class="p span9">
      <div>[name_1] </div>
-     <div>[field_business_position_1] @ [field_organisation_ref_1]</div>   
+     <div>[field_business_position_1] [field_organisation_1]</div>   
   </div>
   <div class="span12 divider"></div>
   <div class="span11">[body]<br>
@@ -364,7 +364,7 @@ function collabco_conversation_feature_views_default_views() {
     <div class="span9 commentname" >
       <span class="p">[name]</span>
     </div>
-    <div class="p span8">[field_business_position] @ [field_organisation_ref]</div>
+    <div class="p span8">[field_business_position] [field_organisation]</div>
     <div class="span7 commentquote" >
       <span class="p">[comment_body]</span>
     </div>
