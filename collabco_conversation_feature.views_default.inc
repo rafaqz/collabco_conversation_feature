@@ -194,6 +194,10 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['relationships']['profile']['bundle_types'] = array(
     'profile' => 'profile',
   );
+  /* Relationship: OG membership: OG membership from Node */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -205,7 +209,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h1';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -372,18 +376,6 @@ function collabco_conversation_feature_views_default_views() {
   <span class="haveyoursay">[title_1]</span>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Sort criterion: Queue machine name - Fix for ordering content */
-  $handler->display->display_options['sorts']['name']['id'] = 'name';
-  $handler->display->display_options['sorts']['name']['table'] = 'nodequeue_queue';
-  $handler->display->display_options['sorts']['name']['field'] = 'name';
-  $handler->display->display_options['sorts']['name']['relationship'] = 'nodequeue_rel';
-  $handler->display->display_options['sorts']['name']['ui_name'] = 'Queue machine name - Fix for ordering content';
-  $handler->display->display_options['sorts']['name']['order'] = 'DESC';
-  /* Sort criterion: Nodequeue: Position */
-  $handler->display->display_options['sorts']['position']['id'] = 'position';
-  $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
-  $handler->display->display_options['sorts']['position']['field'] = 'position';
-  $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -447,6 +439,70 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Closed Group Block */
+  $handler = $view->new_display('block', 'Closed Group Block', 'closed_group_block');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Content: Last comment author */
+  $handler->display->display_options['relationships']['last_comment_uid']['id'] = 'last_comment_uid';
+  $handler->display->display_options['relationships']['last_comment_uid']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['relationships']['last_comment_uid']['field'] = 'last_comment_uid';
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'innovation_capabilities' => 'innovation_capabilities',
+    'areas_of_participant_expertise' => 0,
+    'organization_type' => 0,
+    'precinct' => 0,
+  );
+  /* Relationship: Comment: Last Comment */
+  $handler->display->display_options['relationships']['cid_1']['id'] = 'cid_1';
+  $handler->display->display_options['relationships']['cid_1']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['relationships']['cid_1']['field'] = 'cid';
+  /* Relationship: User: Profile */
+  $handler->display->display_options['relationships']['profile_1']['id'] = 'profile_1';
+  $handler->display->display_options['relationships']['profile_1']['table'] = 'users';
+  $handler->display->display_options['relationships']['profile_1']['field'] = 'profile';
+  $handler->display->display_options['relationships']['profile_1']['relationship'] = 'last_comment_uid';
+  $handler->display->display_options['relationships']['profile_1']['label'] = 'Comment Profile';
+  $handler->display->display_options['relationships']['profile_1']['bundle_types'] = array(
+    'profile' => 'profile',
+  );
+  /* Relationship: User: Profile */
+  $handler->display->display_options['relationships']['profile']['id'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['table'] = 'users';
+  $handler->display->display_options['relationships']['profile']['field'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['relationship'] = 'uid';
+  $handler->display->display_options['relationships']['profile']['label'] = 'Host';
+  $handler->display->display_options['relationships']['profile']['bundle_types'] = array(
+    'profile' => 'profile',
+  );
+  /* Relationship: OG membership: OG membership from Node */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: OG membership: Group ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['gid']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['gid']['validate_options']['types'] = array(
+    'closed_group' => 'closed_group',
+  );
   $export['join_the_conversation'] = $view;
 
   return $export;
