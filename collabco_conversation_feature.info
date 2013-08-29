@@ -55,3 +55,10 @@ features_exclude[dependencies][collabco_view_feature] = collabco_view_feature
 features_exclude[field_base][body] = body
 features_exclude[field_base][og_group_ref] = og_group_ref
 features_exclude[field_instance][node-conversation-og_group_ref] = node-conversation-og_group_ref
+
+
+; Information added by drush on 2013-08-28
+version = "master-dev"
+project = "collabco_conversation_feature"
+datestamp = "1377754255"
+
