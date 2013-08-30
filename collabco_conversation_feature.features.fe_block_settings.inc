@@ -22,7 +22,9 @@ function collabco_conversation_feature_default_fe_block_settings() {
       0 => 'closed_group',
     ),
     'pages' => '',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 2,
+    ),
     'themes' => array(
       'custom_theme' => array(
         'region' => 'content_lower',
@@ -76,10 +78,12 @@ function collabco_conversation_feature_default_fe_block_settings() {
     'module' => 'views',
     'node_types' => array(),
     'pages' => '<front>',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 2,
+    ),
     'themes' => array(
       'custom_theme' => array(
-        'region' => 'content',
+        'region' => 'content_lower',
         'status' => 1,
         'theme' => 'custom_theme',
         'weight' => -29,

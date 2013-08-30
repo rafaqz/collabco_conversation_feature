@@ -13,10 +13,11 @@ dependencies[] = fe_nodequeue
 dependencies[] = features
 dependencies[] = file
 dependencies[] = node
+dependencies[] = og_context
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = views
-datestamp = 1377580951
+datestamp = 1377773580
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[fe_block_settings][] = views-28d52582802129a1e43189419c41eb29
@@ -55,10 +56,3 @@ features_exclude[dependencies][collabco_view_feature] = collabco_view_feature
 features_exclude[field_base][body] = body
 features_exclude[field_base][og_group_ref] = og_group_ref
 features_exclude[field_instance][node-conversation-og_group_ref] = node-conversation-og_group_ref
-
-
-; Information added by drush on 2013-08-28
-version = "master-dev"
-project = "collabco_conversation_feature"
-datestamp = "1377754255"
-
