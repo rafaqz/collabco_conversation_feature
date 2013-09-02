@@ -140,7 +140,7 @@ function collabco_conversation_feature_field_default_field_instances() {
     'label' => 'Attachment',
     'required' => 0,
     'settings' => array(
-      'description_field' => 0,
+      'description_field' => 1,
       'file_directory' => '',
       'file_extensions' => 'jpg jpeg svg git png pdf ppt pptx ppsx sldx odp doc docx odf xls xlsx',
       'max_filesize' => '',
@@ -150,7 +150,7 @@ function collabco_conversation_feature_field_default_field_instances() {
       'active' => 1,
       'module' => 'file',
       'settings' => array(
-        'progress_indicator' => 'throbber',
+        'progress_indicator' => 'bar',
       ),
       'type' => 'file_generic',
       'weight' => 33,
