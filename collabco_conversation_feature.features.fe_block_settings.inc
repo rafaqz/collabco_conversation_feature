@@ -86,7 +86,7 @@ function collabco_conversation_feature_default_fe_block_settings() {
         'region' => 'content_lower',
         'status' => 1,
         'theme' => 'custom_theme',
-        'weight' => -29,
+        'weight' => -23,
       ),
       'seven' => array(
         'region' => '',

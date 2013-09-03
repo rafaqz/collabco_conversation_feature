@@ -14,7 +14,9 @@ function collabco_conversation_feature_user_default_permissions() {
   $permissions['create conversation content'] = array(
     'name' => 'create conversation content',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
+      'Admin' => 'Admin',
+      'Community Moderator' => 'Community Moderator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'node',
   );
@@ -22,7 +24,9 @@ function collabco_conversation_feature_user_default_permissions() {
   // Exported permission: delete any conversation content.
   $permissions['delete any conversation content'] = array(
     'name' => 'delete any conversation content',
-    'roles' => array(),
+    'roles' => array(
+      'Admin' => 'Admin',
+    ),
     'module' => 'node',
   );
 
@@ -38,7 +42,9 @@ function collabco_conversation_feature_user_default_permissions() {
   // Exported permission: edit any conversation content.
   $permissions['edit any conversation content'] = array(
     'name' => 'edit any conversation content',
-    'roles' => array(),
+    'roles' => array(
+      'Admin' => 'Admin',
+    ),
     'module' => 'node',
   );
 

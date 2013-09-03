@@ -201,11 +201,6 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
-  /* Relationship: OG membership: Group Node from OG membership */
-  $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
-  $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
-  $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
-  $handler->display->display_options['relationships']['og_membership_related_node_group']['relationship'] = 'og_membership_rel';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -217,7 +212,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h1';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Body */
+  /* Field: Content: Description */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -352,11 +347,37 @@ function collabco_conversation_feature_views_default_views() {
       <span class="p">[comment_body]</span>
     </div>
   </div>';
+  $handler->display->display_options['fields']['comment_body']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['comment_body']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['comment_body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_body']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['comment_body']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['comment_body']['type'] = 'text_plain';
+  /* Field: Comment: Comment */
+  $handler->display->display_options['fields']['comment_body_1']['id'] = 'comment_body_1';
+  $handler->display->display_options['fields']['comment_body_1']['table'] = 'field_data_comment_body';
+  $handler->display->display_options['fields']['comment_body_1']['field'] = 'comment_body';
+  $handler->display->display_options['fields']['comment_body_1']['relationship'] = 'cid_1';
+  $handler->display->display_options['fields']['comment_body_1']['label'] = '';
+  $handler->display->display_options['fields']['comment_body_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['comment_body_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['comment_body_1']['alter']['text'] = '<div class="row-fluid conversationcomment span12">
+  <div><p><b>Recent comment:</b></p></div>
+    <div class="span2 comment-img">
+      [picture_1]
+    </div>
+    <div class="span9 commentname" >
+      <span class="excerpt-author">
+      [name],</span>
+      <br/>[field_business_position] @ [field_organisation_ref]<br/>
+      commented [last_comment_timestamp]</span>
+    </div>
+    <div class="commentquote span11" >
+      [comment_body]
+    </div>
+  </div>';
+  $handler->display->display_options['fields']['comment_body_1']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
@@ -371,7 +392,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="row-fluid conversationpreview">
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '  <div class="row-fluid conversationpreview conversation-item">
   <h3>[title]</h3>
   <div class="hostedby"><p>A conversation hosted by:</p></div>
   <div class="span2">[picture]</div>
@@ -379,23 +400,8 @@ function collabco_conversation_feature_views_default_views() {
      <div>[name_1] </div>
      <div>[field_business_position_1] @ [field_organisation_ref_1]</div>   
   </div>
-  <div class="span12 divider"></div>
-  <div class="span11">[body]<br>
-  <div class="row-fluid conversationcomment span12">
-    <div class="span11">
-      <p class"p2"><strong>Recent comment: <em>[last_comment_timestamp]</em></strong></p>
-    </div>
-    <div class="span2">
-      [picture_1]
-    </div>
-    <div class="span9 commentname" >
-      <span class="p">[name]</span>
-    </div>
-    <div class="p span8">[field_business_position] @ [field_organisation_ref]</div>
-    <div class="span7 commentquote" >
-      <span class="p">[comment_body]</span>
-    </div>
-  </div>
+  <div class="span12 conversation-excerpt">[body]<br>
+  [comment_body_1]
   <span class="haveyoursay">[title_1]</span>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -485,7 +491,7 @@ function collabco_conversation_feature_views_default_views() {
   /* Display: Closed Group Block */
   $handler = $view->new_display('block', 'Closed Group Block', 'closed_group_block');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Join the group conversation';
+  $handler->display->display_options['title'] = 'Group conversations';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'og_context';
   $handler->display->display_options['access']['perm'] = 'view body field';
