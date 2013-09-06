@@ -36,26 +36,10 @@ function collabco_conversation_feature_views_default_views() {
     'position' => 'position',
   );
   $handler->display->display_options['row_options']['separator'] = ' ';
-  /* Relationship: Nodequeue: Queue */
-  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
-  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
-  $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-    'join_the_conversation_queue' => 'join_the_conversation_queue',
-    'innovation_at_work' => 0,
-    'slideshow' => 0,
-  );
-  /* Field: Nodequeue: Position */
-  $handler->display->display_options['fields']['position']['id'] = 'position';
-  $handler->display->display_options['fields']['position']['table'] = 'nodequeue_nodes';
-  $handler->display->display_options['fields']['position']['field'] = 'position';
-  $handler->display->display_options['fields']['position']['relationship'] = 'nodequeue_rel';
-  $handler->display->display_options['fields']['position']['label'] = '';
-  $handler->display->display_options['fields']['position']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['position']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['position']['suffix'] = '.';
+  /* Relationship: OG membership: OG membership from Node */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -63,11 +47,6 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Nodequeue: Position */
-  $handler->display->display_options['sorts']['position']['id'] = 'position';
-  $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
-  $handler->display->display_options['sorts']['position']['field'] = 'position';
-  $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -82,6 +61,44 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'conversation' => 'conversation',
   );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'conversation' => 'conversation',
+  );
+  /* Filter criterion: OG membership: Group ID */
+  $handler->display->display_options['filters']['gid']['id'] = 'gid';
+  $handler->display->display_options['filters']['gid']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['gid']['field'] = 'gid';
+  $handler->display->display_options['filters']['gid']['relationship'] = 'og_membership_rel';
+  $handler->display->display_options['filters']['gid']['operator'] = 'empty';
+
+  /* Display: Group Block */
+  $handler = $view->new_display('block', 'Group Block', 'group_block');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: OG membership: Group ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $export['conversation_titles'] = $view;
 
   $view = new view();
@@ -136,7 +153,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
-  $handler->display->display_options['header']['view']['view_to_insert'] = 'conversation_titles:default';
+  $handler->display->display_options['header']['view']['view_to_insert'] = 'conversation_titles:block';
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
@@ -496,6 +513,23 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['access']['type'] = 'og_context';
   $handler->display->display_options['access']['perm'] = 'view body field';
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<p>Click to join one of the current conversations in this group:</p>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Header: Global: View area */
+  $handler->display->display_options['header']['view']['id'] = 'view';
+  $handler->display->display_options['header']['view']['table'] = 'views';
+  $handler->display->display_options['header']['view']['field'] = 'view';
+  $handler->display->display_options['header']['view']['view_to_insert'] = 'conversation_titles:group_block';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area_1']['id'] = 'area_1';
+  $handler->display->display_options['header']['area_1']['table'] = 'views';
+  $handler->display->display_options['header']['area_1']['field'] = 'area';
+  $handler->display->display_options['header']['area_1']['content'] = '<p>Or scroll down for a preview.</p>';
+  $handler->display->display_options['header']['area_1']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';

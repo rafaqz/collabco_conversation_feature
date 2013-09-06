@@ -13,7 +13,7 @@ function collabco_conversation_feature_field_default_field_bases() {
   // Exported field_base: 'field_attachment'
   $field_bases['field_attachment'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_attachment',
