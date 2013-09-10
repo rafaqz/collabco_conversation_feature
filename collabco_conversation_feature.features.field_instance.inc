@@ -70,6 +70,42 @@ function collabco_conversation_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'comment-comment_node_conversation-field_attachment'
+  $field_instances['comment-comment_node_conversation-field_attachment'] = array(
+    'bundle' => 'comment_node_conversation',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'field_attachment',
+    'label' => 'Attachment',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 1,
+      'file_directory' => '',
+      'file_extensions' => 'txtjpg jpeg svg git png pdf ppt pptx ppsx sldx odp doc docx odf xls xlsx',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'bar',
+      ),
+      'type' => 'file_generic',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-conversation-body'
   $field_instances['node-conversation-body'] = array(
     'bundle' => 'conversation',

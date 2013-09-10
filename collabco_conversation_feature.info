@@ -29,6 +29,7 @@ features[fe_nodequeue][] = join_the_conversation_queue
 features[features_api][] = api:2
 features[field_base][] = field_attachment
 features[field_instance][] = comment-comment_node_conversation-comment_body
+features[field_instance][] = comment-comment_node_conversation-field_attachment
 features[field_instance][] = node-conversation-body
 features[field_instance][] = node-conversation-field_attachment
 features[node][] = conversation
