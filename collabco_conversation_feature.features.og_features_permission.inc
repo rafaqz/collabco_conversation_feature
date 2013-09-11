@@ -39,21 +39,8 @@ function collabco_conversation_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:closed_group:update field_attachment field'
-  $permissions['node:closed_group:update field_attachment field'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:closed_group:update own conversation content'
   $permissions['node:closed_group:update own conversation content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:closed_group:view field_attachment field'
-  $permissions['node:closed_group:view field_attachment field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'member' => 'member',
@@ -88,21 +75,11 @@ function collabco_conversation_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:group:update field_attachment field'
-  $permissions['node:group:update field_attachment field'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:group:update own conversation content'
   $permissions['node:group:update own conversation content'] = array(
     'roles' => array(
       'member' => 'member',
     ),
-  );
-
-  // Exported og permission: 'node:group:view field_attachment field'
-  $permissions['node:group:view field_attachment field'] = array(
-    'roles' => array(),
   );
 
   return $permissions;
