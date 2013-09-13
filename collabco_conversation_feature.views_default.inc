@@ -214,10 +214,6 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['relationships']['profile']['bundle_types'] = array(
     'profile' => 'profile',
   );
-  /* Relationship: OG membership: OG membership from Node */
-  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
-  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -446,14 +442,13 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'conversation' => 'conversation',
   );
-  /* Filter criterion: OG membership: Group_type */
-  $handler->display->display_options['filters']['group_type']['id'] = 'group_type';
-  $handler->display->display_options['filters']['group_type']['table'] = 'og_membership';
-  $handler->display->display_options['filters']['group_type']['field'] = 'group_type';
-  $handler->display->display_options['filters']['group_type']['relationship'] = 'og_membership_rel';
-  $handler->display->display_options['filters']['group_type']['operator'] = 'empty';
-  $handler->display->display_options['filters']['group_type']['value'] = array(
-    'node' => 'node',
+  /* Filter criterion: Content: Group visibility (group_access) */
+  $handler->display->display_options['filters']['group_access_value']['id'] = 'group_access_value';
+  $handler->display->display_options['filters']['group_access_value']['table'] = 'field_data_group_access';
+  $handler->display->display_options['filters']['group_access_value']['field'] = 'group_access_value';
+  $handler->display->display_options['filters']['group_access_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['group_access_value']['value'] = array(
+    1 => '1',
   );
 
   /* Display: Page */
