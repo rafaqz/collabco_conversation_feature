@@ -12,8 +12,8 @@ function collabco_conversation_feature_views_default_views() {
 
   $view = new view();
   $view->name = 'conversation_titles';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Lists just the titles of conversations for use in other views.';
+  $view->tag = 'Conversation Feature';
   $view->base_table = 'node';
   $view->human_name = 'Conversation Titles';
   $view->core = 7;
@@ -103,8 +103,8 @@ function collabco_conversation_feature_views_default_views() {
 
   $view = new view();
   $view->name = 'join_the_conversation';
-  $view->description = '';
-  $view->tag = 'default';
+  $view->description = 'Shows conversations and recent comments';
+  $view->tag = 'Conversation Feature';
   $view->base_table = 'node';
   $view->human_name = 'Join the conversation';
   $view->core = 7;
