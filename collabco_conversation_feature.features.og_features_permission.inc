@@ -14,6 +14,7 @@ function collabco_conversation_feature_og_features_default_permissions() {
   $permissions['node:closed_group:create conversation content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+      'member' => 'member',
     ),
   );
 
@@ -50,6 +51,7 @@ function collabco_conversation_feature_og_features_default_permissions() {
   // Exported og permission: 'node:group:create conversation content'
   $permissions['node:group:create conversation content'] = array(
     'roles' => array(
+      'administrator member' => 'administrator member',
       'member' => 'member',
     ),
   );
@@ -57,6 +59,7 @@ function collabco_conversation_feature_og_features_default_permissions() {
   // Exported og permission: 'node:group:delete any conversation content'
   $permissions['node:group:delete any conversation content'] = array(
     'roles' => array(
+      'administrator member' => 'administrator member',
       'member' => 'member',
     ),
   );
@@ -64,6 +67,7 @@ function collabco_conversation_feature_og_features_default_permissions() {
   // Exported og permission: 'node:group:delete own conversation content'
   $permissions['node:group:delete own conversation content'] = array(
     'roles' => array(
+      'administrator member' => 'administrator member',
       'member' => 'member',
     ),
   );
@@ -71,6 +75,7 @@ function collabco_conversation_feature_og_features_default_permissions() {
   // Exported og permission: 'node:group:update any conversation content'
   $permissions['node:group:update any conversation content'] = array(
     'roles' => array(
+      'administrator member' => 'administrator member',
       'member' => 'member',
     ),
   );
@@ -78,6 +83,7 @@ function collabco_conversation_feature_og_features_default_permissions() {
   // Exported og permission: 'node:group:update own conversation content'
   $permissions['node:group:update own conversation content'] = array(
     'roles' => array(
+      'administrator member' => 'administrator member',
       'member' => 'member',
     ),
   );
