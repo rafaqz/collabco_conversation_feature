@@ -442,14 +442,11 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'conversation' => 'conversation',
   );
-  /* Filter criterion: Content: Group visibility (group_access) */
-  $handler->display->display_options['filters']['group_access_value']['id'] = 'group_access_value';
-  $handler->display->display_options['filters']['group_access_value']['table'] = 'field_data_group_access';
-  $handler->display->display_options['filters']['group_access_value']['field'] = 'group_access_value';
-  $handler->display->display_options['filters']['group_access_value']['operator'] = 'not';
-  $handler->display->display_options['filters']['group_access_value']['value'] = array(
-    1 => '1',
-  );
+  /* Filter criterion: OG membership: Group ID */
+  $handler->display->display_options['filters']['gid']['id'] = 'gid';
+  $handler->display->display_options['filters']['gid']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['gid']['field'] = 'gid';
+  $handler->display->display_options['filters']['gid']['operator'] = 'empty';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
