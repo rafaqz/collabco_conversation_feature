@@ -280,8 +280,11 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['field_organisation_1']['table'] = 'field_data_field_organisation';
   $handler->display->display_options['fields']['field_organisation_1']['field'] = 'field_organisation';
   $handler->display->display_options['fields']['field_organisation_1']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['field_organisation_1']['label'] = '';
+  $handler->display->display_options['fields']['field_organisation_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_organisation_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_organisation_1']['alter']['text'] = '@ [field_organisation_1]';
+  $handler->display->display_options['fields']['field_organisation_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_organisation_1']['hide_empty'] = TRUE;
   /* Field: Comment: Author */
   $handler->display->display_options['fields']['name']['id'] = 'name';
