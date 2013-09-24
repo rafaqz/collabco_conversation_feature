@@ -22,12 +22,6 @@ function collabco_conversation_feature_default_fe_block_settings() {
     'pages' => '<front>',
     'roles' => array(),
     'themes' => array(
-      'openhub' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'openhub',
-        'weight' => -29,
-      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
