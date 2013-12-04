@@ -164,16 +164,6 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  /* Relationship: Nodequeue: Queue */
-  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
-  $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-    'join_the_conversation_queue' => 'join_the_conversation_queue',
-    'innovation_at_work' => 0,
-    'slideshow' => 0,
-  );
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
@@ -225,7 +215,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h1';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -296,13 +286,13 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['field_business_position_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_business_position_1']['element_label_colon'] = FALSE;
   /* Field: Profile: Organisation */
-  $handler->display->display_options['fields']['field_organisation_ref_1']['id'] = 'field_organisation_ref_1';
-  $handler->display->display_options['fields']['field_organisation_ref_1']['table'] = 'field_data_field_organisation_ref';
-  $handler->display->display_options['fields']['field_organisation_ref_1']['field'] = 'field_organisation_ref';
-  $handler->display->display_options['fields']['field_organisation_ref_1']['relationship'] = 'profile';
-  $handler->display->display_options['fields']['field_organisation_ref_1']['label'] = '';
-  $handler->display->display_options['fields']['field_organisation_ref_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_organisation_ref_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_organisation_1']['id'] = 'field_organisation_1';
+  $handler->display->display_options['fields']['field_organisation_1']['table'] = 'field_data_field_organisation';
+  $handler->display->display_options['fields']['field_organisation_1']['field'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation_1']['relationship'] = 'profile';
+  $handler->display->display_options['fields']['field_organisation_1']['label'] = '';
+  $handler->display->display_options['fields']['field_organisation_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_organisation_1']['element_label_colon'] = FALSE;
   /* Field: Comment: Author */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'comment';
@@ -331,13 +321,13 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['field_business_position']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_business_position']['element_label_colon'] = FALSE;
   /* Field: Profile: Organisation */
-  $handler->display->display_options['fields']['field_organisation_ref']['id'] = 'field_organisation_ref';
-  $handler->display->display_options['fields']['field_organisation_ref']['table'] = 'field_data_field_organisation_ref';
-  $handler->display->display_options['fields']['field_organisation_ref']['field'] = 'field_organisation_ref';
-  $handler->display->display_options['fields']['field_organisation_ref']['relationship'] = 'profile_1';
-  $handler->display->display_options['fields']['field_organisation_ref']['label'] = '';
-  $handler->display->display_options['fields']['field_organisation_ref']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_organisation_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['field'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['relationship'] = 'profile_1';
+  $handler->display->display_options['fields']['field_organisation']['label'] = '';
+  $handler->display->display_options['fields']['field_organisation']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_organisation']['element_label_colon'] = FALSE;
   /* Field: Comment: Comment */
   $handler->display->display_options['fields']['comment_body']['id'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
@@ -411,7 +401,7 @@ function collabco_conversation_feature_views_default_views() {
   <div class="span2">[picture]</div>
   <div class="p span9">
      <div>[name_1] </div>
-     <div>[field_business_position_1] @ [field_organisation_ref_1]</div>   
+     <div>[field_business_position_1] @ [field_organisation_1]</div>   
   </div>
   <div class="span12 conversation-excerpt">[body]<br>
   [comment_body_1]
@@ -442,11 +432,6 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'conversation' => 'conversation',
   );
-  /* Filter criterion: OG membership: Group ID */
-  $handler->display->display_options['filters']['gid']['id'] = 'gid';
-  $handler->display->display_options['filters']['gid']['table'] = 'og_membership';
-  $handler->display->display_options['filters']['gid']['field'] = 'gid';
-  $handler->display->display_options['filters']['gid']['operator'] = 'empty';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -497,8 +482,8 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
 
-  /* Display: Closed Group Block */
-  $handler = $view->new_display('block', 'Closed Group Block', 'closed_group_block');
+  /* Display: Group Block */
+  $handler = $view->new_display('block', 'Group Block', 'group_block');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Group conversations';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -582,6 +567,8 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'node';
   $handler->display->display_options['arguments']['gid']['validate_options']['types'] = array(
     'closed_group' => 'closed_group',
+    'group' => 'group',
+    'project' => 'project',
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
