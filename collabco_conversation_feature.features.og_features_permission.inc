@@ -150,44 +150,5 @@ function collabco_conversation_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:project:create knowledge_object content'
-  $permissions['node:project:create knowledge_object content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:project:delete any knowledge_object content'
-  $permissions['node:project:delete any knowledge_object content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:project:delete own knowledge_object content'
-  $permissions['node:project:delete own knowledge_object content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:project:update any knowledge_object content'
-  $permissions['node:project:update any knowledge_object content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:project:update own knowledge_object content'
-  $permissions['node:project:update own knowledge_object content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   return $permissions;
 }
