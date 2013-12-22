@@ -596,7 +596,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['gid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['gid']['validate']['type'] = 'og';
-  $handler->display->display_options['path'] = 'node/%/conversations';
+  $handler->display->display_options['path'] = 'node/%/conversation';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Conversations';
   $handler->display->display_options['menu']['description'] = 'Conversation in the group';
