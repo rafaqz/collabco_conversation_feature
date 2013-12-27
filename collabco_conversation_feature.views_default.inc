@@ -577,18 +577,64 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['view_to_insert'] = 'conversation_titles:group_block';
+  $handler->display->display_options['header']['view']['inherit_arguments'] = TRUE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
   $handler->display->display_options['header']['area_1']['content'] = '<p>Or scroll down for a preview.</p>';
   $handler->display->display_options['header']['area_1']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Content: Last comment author */
+  $handler->display->display_options['relationships']['last_comment_uid']['id'] = 'last_comment_uid';
+  $handler->display->display_options['relationships']['last_comment_uid']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['relationships']['last_comment_uid']['field'] = 'last_comment_uid';
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'innovation_capabilities' => 'innovation_capabilities',
+    'areas_of_participant_expertise' => 0,
+    'organization_type' => 0,
+    'precinct' => 0,
+  );
+  /* Relationship: Comment: Last Comment */
+  $handler->display->display_options['relationships']['cid_1']['id'] = 'cid_1';
+  $handler->display->display_options['relationships']['cid_1']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['relationships']['cid_1']['field'] = 'cid';
+  /* Relationship: User: Profile */
+  $handler->display->display_options['relationships']['profile_1']['id'] = 'profile_1';
+  $handler->display->display_options['relationships']['profile_1']['table'] = 'users';
+  $handler->display->display_options['relationships']['profile_1']['field'] = 'profile';
+  $handler->display->display_options['relationships']['profile_1']['relationship'] = 'last_comment_uid';
+  $handler->display->display_options['relationships']['profile_1']['label'] = 'Comment Profile';
+  $handler->display->display_options['relationships']['profile_1']['bundle_types'] = array(
+    'profile' => 'profile',
+  );
+  /* Relationship: User: Profile */
+  $handler->display->display_options['relationships']['profile']['id'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['table'] = 'users';
+  $handler->display->display_options['relationships']['profile']['field'] = 'profile';
+  $handler->display->display_options['relationships']['profile']['relationship'] = 'uid';
+  $handler->display->display_options['relationships']['profile']['label'] = 'Host';
+  $handler->display->display_options['relationships']['profile']['bundle_types'] = array(
+    'profile' => 'profile',
+  );
+  /* Relationship: OG membership: OG membership from Node */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: OG membership: Group ID */
   $handler->display->display_options['arguments']['gid']['id'] = 'gid';
   $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
-  $handler->display->display_options['arguments']['gid']['relationship'] = 'uid';
+  $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
