@@ -213,7 +213,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h1';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Body */
+  /* Field: Content: Description */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -274,7 +274,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'user_thumb';
+  $handler->display->display_options['fields']['picture']['image_style'] = 'user_thumb_small';
   /* Field: Profile: Business Position */
   $handler->display->display_options['fields']['field_business_position_1']['id'] = 'field_business_position_1';
   $handler->display->display_options['fields']['field_business_position_1']['table'] = 'field_data_field_business_position';
@@ -565,25 +565,6 @@ function collabco_conversation_feature_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'group_page');
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2>Current conversations</h2>
-<p>Click to join one of our current conversations:</p>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
-  /* Header: Global: View area */
-  $handler->display->display_options['header']['view']['id'] = 'view';
-  $handler->display->display_options['header']['view']['table'] = 'views';
-  $handler->display->display_options['header']['view']['field'] = 'view';
-  $handler->display->display_options['header']['view']['view_to_insert'] = 'conversation_titles:group_block';
-  $handler->display->display_options['header']['view']['inherit_arguments'] = TRUE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area_1']['id'] = 'area_1';
-  $handler->display->display_options['header']['area_1']['table'] = 'views';
-  $handler->display->display_options['header']['area_1']['field'] = 'area';
-  $handler->display->display_options['header']['area_1']['content'] = '<p>Or scroll down for a preview.</p>';
-  $handler->display->display_options['header']['area_1']['format'] = 'full_html';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -646,7 +627,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Conversations';
   $handler->display->display_options['menu']['description'] = 'Conversation in the group';
-  $handler->display->display_options['menu']['weight'] = '5';
+  $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['join_the_conversation'] = $view;
