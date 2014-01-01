@@ -565,6 +565,15 @@ function collabco_conversation_feature_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'group_page');
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Link */
+  $handler->display->display_options['header']['link']['id'] = 'link';
+  $handler->display->display_options['header']['link']['table'] = 'views';
+  $handler->display->display_options['header']['link']['field'] = 'link';
+  $handler->display->display_options['header']['link']['label'] = 'Create Conversation Link';
+  $handler->display->display_options['header']['link']['empty'] = TRUE;
+  $handler->display->display_options['header']['link']['text'] = 'Create Conversation';
+  $handler->display->display_options['header']['link']['path'] = 'node/add/conversation';
+  $handler->display->display_options['header']['link']['querystring'] = 'og_group_ref=!1';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
