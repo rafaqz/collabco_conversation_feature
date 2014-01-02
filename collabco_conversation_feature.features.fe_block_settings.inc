@@ -12,34 +12,5 @@ function collabco_conversation_feature_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['views-join_the_conversation-block'] = array(
-    'cache' => -1,
-    'css_class' => 'iin-join-conversation-block',
-    'custom' => 0,
-    'delta' => 'join_the_conversation-block',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '<front>',
-    'roles' => array(
-      'authenticated user' => 2,
-    ),
-    'themes' => array(
-      'custom_theme' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'custom_theme',
-        'weight' => -23,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 1,
-  );
-
   return $export;
 }
