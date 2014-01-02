@@ -373,7 +373,7 @@ function collabco_conversation_feature_views_default_views() {
       <br/>[field_business_position] @ [field_organisation_ref]<br/>
       commented [last_comment_timestamp]</span>
     </div>
-    <div class="commentquote span11" >
+    <div class="commentquote span12" >
       [comment_body]
     </div>
   </div>';
@@ -394,13 +394,12 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '  <div class="row-fluid conversationpreview conversation-item">
   <h3>[title]</h3>
-  <div class="hostedby"><p>A conversation hosted by:</p></div>
-  <div class="span2">[picture]</div>
-  <div class="p span9">
+  <div class="span1">[picture]</div>
+  <div class="p span3">
      <div>[name_1] </div>
      <div>[field_business_position_1] @ [field_organisation_1]</div>   
   </div>
-  <div class="span12 conversation-excerpt">[body]<br>
+  <div class="span8 conversation-excerpt">[body]<br>
   [comment_body_1]
   <span class="haveyoursay">[title_1]</span>
 </div>';
@@ -563,7 +562,6 @@ function collabco_conversation_feature_views_default_views() {
 
   /* Display: Group Page */
   $handler = $view->new_display('page', 'Group Page', 'group_page');
-  $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
