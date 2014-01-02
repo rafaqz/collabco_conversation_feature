@@ -102,11 +102,11 @@ function collabco_conversation_feature_views_default_views() {
   $export['conversation_titles'] = $view;
 
   $view = new view();
-  $view->name = 'join_the_conversation';
+  $view->name = 'conversations';
   $view->description = 'Shows conversations and recent comments';
   $view->tag = 'Conversation Feature';
   $view->base_table = 'node';
-  $view->human_name = 'Join the conversation';
+  $view->human_name = 'Conversations';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -364,7 +364,6 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['comment_body_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['comment_body_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['comment_body_1']['alter']['text'] = '<div class="row-fluid conversationcomment span12">
-  <div><p><b>Recent comment:</b></p></div>
     <div class="span2 comment-img">
       [picture_1]
     </div>
@@ -562,18 +561,9 @@ function collabco_conversation_feature_views_default_views() {
     'conversation' => 'conversation',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'group_page');
+  /* Display: Group Page */
+  $handler = $view->new_display('page', 'Group Page', 'group_page');
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Link */
-  $handler->display->display_options['header']['link']['id'] = 'link';
-  $handler->display->display_options['header']['link']['table'] = 'views';
-  $handler->display->display_options['header']['link']['field'] = 'link';
-  $handler->display->display_options['header']['link']['label'] = 'Create Conversation Link';
-  $handler->display->display_options['header']['link']['empty'] = TRUE;
-  $handler->display->display_options['header']['link']['text'] = 'Create Conversation';
-  $handler->display->display_options['header']['link']['path'] = 'node/add/conversation';
-  $handler->display->display_options['header']['link']['querystring'] = 'og_group_ref=!1';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -639,7 +629,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $export['join_the_conversation'] = $view;
+  $export['conversations'] = $view;
 
   return $export;
 }
