@@ -15,7 +15,8 @@ function collabco_conversation_feature_user_default_permissions() {
     'name' => 'create conversation content',
     'roles' => array(
       'Admin' => 'Admin',
-      'Moderator' => 'Moderator',
+      'Community Moderator' => 'Community Moderator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'node',
   );
@@ -25,7 +26,8 @@ function collabco_conversation_feature_user_default_permissions() {
     'name' => 'delete any conversation content',
     'roles' => array(
       'Admin' => 'Admin',
-      'Moderator' => 'Moderator',
+      'Community Moderator' => 'Community Moderator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'node',
   );
@@ -35,7 +37,8 @@ function collabco_conversation_feature_user_default_permissions() {
     'name' => 'delete own conversation content',
     'roles' => array(
       'Admin' => 'Admin',
-      'Moderator' => 'Moderator',
+      'Community Moderator' => 'Community Moderator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'node',
   );
@@ -45,7 +48,8 @@ function collabco_conversation_feature_user_default_permissions() {
     'name' => 'edit any conversation content',
     'roles' => array(
       'Admin' => 'Admin',
-      'Moderator' => 'Moderator',
+      'Community Moderator' => 'Community Moderator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'node',
   );
@@ -55,7 +59,8 @@ function collabco_conversation_feature_user_default_permissions() {
     'name' => 'edit own conversation content',
     'roles' => array(
       'Admin' => 'Admin',
-      'Moderator' => 'Moderator',
+      'Community Moderator' => 'Community Moderator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'node',
   );
