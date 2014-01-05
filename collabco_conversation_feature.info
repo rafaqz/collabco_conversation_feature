@@ -65,6 +65,7 @@ features[variable][] = node_submitted_conversation
 features[variable][] = pathauto_node_conversation_pattern
 features[views_view][] = conversation_titles
 features[views_view][] = conversations
+features_exclude[dependencies][collabco_settings_feature] = collabco_settings_feature
 features_exclude[dependencies][collabco_entities_feature] = collabco_entities_feature
 features_exclude[dependencies][collabco_view_feature] = collabco_view_feature
 features_exclude[dependencies][collabco_knowledge_feature] = collabco_knowledge_feature
