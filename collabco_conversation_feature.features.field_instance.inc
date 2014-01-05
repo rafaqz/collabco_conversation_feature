@@ -159,23 +159,22 @@ function collabco_conversation_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'og_ui',
         'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
     'entityconnect_unload_add' => 1,
     'entityconnect_unload_edit' => 1,
     'field_name' => 'og_group_ref',
-    'label' => 'Make this available only to the following groups',
+    'label' => 'Groups audience',
     'options_limit' => 0,
     'options_limit_empty_behaviour' => 0,
     'options_limit_fields' => array(
@@ -229,8 +228,8 @@ function collabco_conversation_feature_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Comment');
   t('Description');
+  t('Groups audience');
   t('If you do not select any groups, then it will be visible to all members.');
-  t('Make this available only to the following groups');
 
   return $field_instances;
 }
