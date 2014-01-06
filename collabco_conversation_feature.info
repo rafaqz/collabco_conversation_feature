@@ -18,7 +18,6 @@ datestamp = 1377773580
 features[ctools][] = context:context:3
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
-features[fe_block_settings][] = views-join_the_conversation-block
 features[features_api][] = api:2
 features[field_instance][] = comment-comment_node_conversation-comment_body
 features[field_instance][] = node-conversation-body
