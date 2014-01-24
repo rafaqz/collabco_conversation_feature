@@ -155,7 +155,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['rendered_entity_1']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['rendered_entity_1']['display'] = 'view';
-  $handler->display->display_options['fields']['rendered_entity_1']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['rendered_entity_1']['view_mode'] = 'teaser';
   $handler->display->display_options['fields']['rendered_entity_1']['bypass_access'] = 0;
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
