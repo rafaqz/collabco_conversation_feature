@@ -13,6 +13,13 @@ function collabco_conversation_feature_collabco_integration() {
   // Add links to views if a module wants to do that.
   return array(
     'collabco_conversation_feature' => array(
+      'entity' => array(
+        'node'=> array('conversation'),
+      ),
+      'tab' => array(
+        'label' => 'Conversations', 
+        'subpath' => 'conversation',
+      ),
       'views' => array(
         'conversations' => array(
           'group_page' => array(
@@ -21,7 +28,6 @@ function collabco_conversation_feature_collabco_integration() {
               'entity_type' => 'none',
             ),
             'add_content_link' => array(
-              'bundles' => array('conversation'),
               'areas' => array('header'),
             ),
           ),
