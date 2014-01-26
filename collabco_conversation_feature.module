@@ -17,7 +17,10 @@ function collabco_conversation_feature_collabco_integration() {
         'node'=> array('conversation'),
       ),
       'tab' => array(
-        'Conversations' => 'conversation',
+        'Conversations' => array(
+          'subpath' => 'conversation',
+          'node' => 'conversation',
+        ),
       ),
       'views' => array(
         'conversations' => array(
