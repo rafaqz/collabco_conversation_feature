@@ -203,9 +203,7 @@ function collabco_conversation_feature_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'Read more';
-  $handler->display->display_options['access']['type'] = 'og_context';
-  $handler->display->display_options['access']['perm'] = 'view body field';
-  $handler->display->display_options['access']['group_id_arg'] = '1';
+  $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'views_content_cache';
   $handler->display->display_options['cache']['results_min_lifespan'] = '-1';
   $handler->display->display_options['cache']['results_max_lifespan'] = '21600';
