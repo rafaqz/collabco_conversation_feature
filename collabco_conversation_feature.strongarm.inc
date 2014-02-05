@@ -99,7 +99,14 @@ function collabco_conversation_feature_strongarm() {
           'weight' => '30',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'social_share' => array(
+          'teaser' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__conversation'] = $strongarm;
