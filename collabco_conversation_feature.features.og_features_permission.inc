@@ -66,6 +66,7 @@ function collabco_conversation_feature_og_features_default_permissions() {
   $permissions['node:closed_group:view field_ko_file field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+      'member' => 'member',
     ),
   );
 
@@ -73,6 +74,7 @@ function collabco_conversation_feature_og_features_default_permissions() {
   $permissions['node:closed_group:view field_ko_ref field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+      'member' => 'member',
     ),
   );
 
@@ -88,7 +90,6 @@ function collabco_conversation_feature_og_features_default_permissions() {
   $permissions['node:group:delete any conversation content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
-      'member' => 'member',
     ),
   );
 
