@@ -246,7 +246,7 @@ function collabco_conversation_feature_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'Tags',
+    'field_name' => 'tags',
     'label' => 'tags',
     'required' => FALSE,
     'settings' => array(
