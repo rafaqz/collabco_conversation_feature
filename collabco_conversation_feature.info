@@ -60,7 +60,6 @@ features[variable][] = node_preview_conversation
 features[variable][] = node_submitted_conversation
 features[variable][] = pathauto_node_conversation_pattern
 features[views_view][] = conversation_list
-features[views_view][] = conversation_titles
 features[views_view][] = conversations
 features_exclude[dependencies][collabco_settings_feature] = collabco_settings_feature
 features_exclude[dependencies][collabco_entities_feature] = collabco_entities_feature
