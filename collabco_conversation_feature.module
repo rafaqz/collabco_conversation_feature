@@ -14,12 +14,15 @@ function collabco_conversation_feature_collabco_integration() {
   return array(
     'collabco_conversation_feature' => array(
       'entity' => array(
-        'node'=> array('conversation'),
-      ),
-      'tab' => array(
-        'Conversations' => array(
-          'subpath' => 'conversation',
-          'node' => 'conversation',
+        'node'=> array(
+          'conversation' => array(
+            'add_content_link' => TRUE,
+            'tab' => array(
+              'Conversations' => array(
+                'subpath' => 'conversation',
+              ),
+            ),
+          ),
         ),
       ),
       'views' => array(
