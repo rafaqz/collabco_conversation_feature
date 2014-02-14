@@ -20,7 +20,6 @@ features[features_api][] = api:2
 features[field_instance][] = comment-comment_node_conversation-comment_body
 features[field_instance][] = node-conversation-body
 features[field_instance][] = node-conversation-og_group_ref
-features[field_instance][] = node-conversation-tags
 features[node][] = conversation
 features[og_features_permission][] = node:closed_group:create conversation content
 features[og_features_permission][] = node:closed_group:delete any conversation content
