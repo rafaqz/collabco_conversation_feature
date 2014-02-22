@@ -126,11 +126,11 @@ function collabco_conversation_feature_views_default_views() {
     'node' => array(
       'conversation' => 'conversation',
       'basic_page' => 0,
-      'blog' => 0,
       'closed_group' => 0,
       'knowledge_object' => 0,
       'group' => 0,
       'idea' => 0,
+      'news' => 0,
       'organisation' => 0,
       'project' => 0,
       'book' => 0,
