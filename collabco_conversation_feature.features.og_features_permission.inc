@@ -105,7 +105,6 @@ function collabco_conversation_feature_og_features_default_permissions() {
   $permissions['node:group:update any conversation content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
-      'member' => 'member',
     ),
   );
 
