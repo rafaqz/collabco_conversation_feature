@@ -47,13 +47,6 @@ function collabco_conversation_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:closed_group:update field_ko_ref field'
-  $permissions['node:closed_group:update field_ko_ref field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
   // Exported og permission: 'node:closed_group:update own conversation content'
   $permissions['node:closed_group:update own conversation content'] = array(
     'roles' => array(
@@ -64,14 +57,6 @@ function collabco_conversation_feature_og_features_default_permissions() {
 
   // Exported og permission: 'node:closed_group:view field_ko_file field'
   $permissions['node:closed_group:view field_ko_file field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:closed_group:view field_ko_ref field'
-  $permissions['node:closed_group:view field_ko_ref field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'member' => 'member',
@@ -116,14 +101,6 @@ function collabco_conversation_feature_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:group:update field_ko_ref field'
-  $permissions['node:group:update field_ko_ref field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
   // Exported og permission: 'node:group:update own conversation content'
   $permissions['node:group:update own conversation content'] = array(
     'roles' => array(
@@ -134,15 +111,6 @@ function collabco_conversation_feature_og_features_default_permissions() {
 
   // Exported og permission: 'node:group:view field_ko_file field'
   $permissions['node:group:view field_ko_file field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-      'non-member' => 'non-member',
-    ),
-  );
-
-  // Exported og permission: 'node:group:view field_ko_ref field'
-  $permissions['node:group:view field_ko_ref field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'member' => 'member',
