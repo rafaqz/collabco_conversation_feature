@@ -10,53 +10,53 @@
 function collabco_conversation_feature_og_features_default_permissions() {
   $permissions = array();
 
-  // Exported og permission: 'node:closed_group:create conversation content'
-  $permissions['node:closed_group:create conversation content'] = array(
+  // Exported og permission: 'node:private_group:create conversation content'
+  $permissions['node:private_group:create conversation content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'member' => 'member',
     ),
   );
 
-  // Exported og permission: 'node:closed_group:delete any conversation content'
-  $permissions['node:closed_group:delete any conversation content'] = array(
+  // Exported og permission: 'node:private_group:delete any conversation content'
+  $permissions['node:private_group:delete any conversation content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
     ),
   );
 
-  // Exported og permission: 'node:closed_group:delete own conversation content'
-  $permissions['node:closed_group:delete own conversation content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-      'member' => 'member',
-    ),
-  );
-
-  // Exported og permission: 'node:closed_group:update any conversation content'
-  $permissions['node:closed_group:update any conversation content'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:closed_group:update field_ko_file field'
-  $permissions['node:closed_group:update field_ko_file field'] = array(
-    'roles' => array(
-      'administrator member' => 'administrator member',
-    ),
-  );
-
-  // Exported og permission: 'node:closed_group:update own conversation content'
-  $permissions['node:closed_group:update own conversation content'] = array(
+  // Exported og permission: 'node:private_group:delete own conversation content'
+  $permissions['node:private_group:delete own conversation content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'member' => 'member',
     ),
   );
 
-  // Exported og permission: 'node:closed_group:view field_ko_file field'
-  $permissions['node:closed_group:view field_ko_file field'] = array(
+  // Exported og permission: 'node:private_group:update any conversation content'
+  $permissions['node:private_group:update any conversation content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:private_group:update field_ko_file field'
+  $permissions['node:private_group:update field_ko_file field'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+    ),
+  );
+
+  // Exported og permission: 'node:private_group:update own conversation content'
+  $permissions['node:private_group:update own conversation content'] = array(
+    'roles' => array(
+      'administrator member' => 'administrator member',
+      'member' => 'member',
+    ),
+  );
+
+  // Exported og permission: 'node:private_group:view field_ko_file field'
+  $permissions['node:private_group:view field_ko_file field'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
       'member' => 'member',
