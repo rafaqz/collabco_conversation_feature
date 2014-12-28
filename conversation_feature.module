@@ -4,15 +4,15 @@
  * Code for the Collabco Conversation Feature feature.
  */
 
-include_once 'collabco_conversation_feature.features.inc';
+include_once 'conversation_feature.features.inc';
 
 /**
- * Implements hook_collabco_integration().
+ * Implements hook_integration().
  */
-function collabco_conversation_feature_collabco_integration() {
+function conversation_feature_integration() {
   // Add links to views if a module wants to do that.
   return array(
-    'collabco_conversation_feature' => array(
+    'conversation_feature' => array(
       'entity' => array(
         'node'=> array(
           'conversation' => array(

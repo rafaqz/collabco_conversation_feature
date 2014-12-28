@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * collabco_conversation_feature.features.user_permission.inc
+ * conversation_feature.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function collabco_conversation_feature_user_default_permissions() {
+function conversation_feature_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'create conversation content'.

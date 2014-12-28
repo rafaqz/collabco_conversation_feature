@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * collabco_conversation_feature.features.inc
+ * conversation_feature.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function collabco_conversation_feature_ctools_plugin_api($module = NULL, $api = NULL) {
+function conversation_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
@@ -19,14 +19,14 @@ function collabco_conversation_feature_ctools_plugin_api($module = NULL, $api = 
 /**
  * Implements hook_views_api().
  */
-function collabco_conversation_feature_views_api($module = NULL, $api = NULL) {
+function conversation_feature_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function collabco_conversation_feature_node_info() {
+function conversation_feature_node_info() {
   $items = array(
     'conversation' => array(
       'name' => t('Conversation'),
