@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the Collabco Conversation Feature feature.
+ * Code for the Conversation Feature.
  */
 
 include_once 'conversation_feature.features.inc';

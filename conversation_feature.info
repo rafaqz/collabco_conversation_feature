@@ -1,7 +1,6 @@
-name = Collabco Conversation Feature
-description = Collabco conversation threads
+name = Conversation Feature
 core = 7.x
-package = Collabco
+package = Features
 project = conversation_feature
 dependencies[] = block_class
 dependencies[] = core_feature
